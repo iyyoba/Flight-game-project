@@ -92,8 +92,20 @@ def check_goal(g_id, cur_airport):
 def calculate_distance(current, target):
     start = get_airport_info(current)
     end = get_airport_info(target)
-    return distance.distance((start['latitude_deg'], start['longitude_deg']),
-                             (end['latitude_deg'], end['longitude_deg'])).km
+
+    #print("current", current)
+    #print("target", target)
+
+    #print("start before tuple", start)
+    #print("end before tuple", end)
+
+    start1 = (start['latitude_deg'], start['longitude_deg'])
+    start2 = (end['latitude_deg'], end['longitude_deg'])
+
+    #print("start1", start1)
+    #print("start2", start2)
+
+    return distance.distance(start1, start2).km
 # get airports in range
 def airports_in_range(icao, a_locations, p_range):
     in_range = []
@@ -109,8 +121,6 @@ def update_location(icao, p_range, u_money, g_id):
     cursor = conn.cursor(dictionary=True)
     cursor.execute(sql, (icao, p_range, u_money, g_id))
 
-#airports = get_airports()
-#create_game(1000, 3000, 'UTOI', 'Frank', airports)
 
 
 

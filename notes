@@ -1,0 +1,15 @@
+
+For this game to work the following modules should be installed:
+
+            - geopy
+            - mysql
+            - mysql connector
+            - textwrap
+
+In the future this game could be improved by
+
+            - by adding unittest
+            - by adding a user interface
+            - expanding the prize list and the airport number to cover
+              global destinations.
+            - etc
